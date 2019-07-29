@@ -66,3 +66,13 @@ echo -e "$password\n" | sudo -S dnf update -y
 # npm -v
 # echo "Successfully installed nodejs and npm"
 
+echo "Installing Git"
+git --version
+read -p "Enter Git username: " user_var
+read -p "Enter Git EmailID: " email_var
+echo -e "$password\n" | sudo -S dnf -y install git
+# dnf -y install git
+git config --global user.name "$user_var"
+git config --global user.email "$email_var"
+git config --list
+
